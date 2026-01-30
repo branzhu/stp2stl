@@ -3,8 +3,10 @@
 A minimal STEP → STL converter built on Open CASCADE Technology (OCCT) 7.9.3.
 It provides:
 
-- a small C API (`stp2stl` shared library)
+- a small C API (single file `stp2stl` shared library)
 - a CLI tool (`stp2stl` executable)
+
+OCCT is statically linked into stp2stl, so redistribution is as simple as shipping a single `stp2stl` dynamic library (~11.3MB on windows), instead of dozens of OCCT/third-party libraries and dependencies totaling hundreds of MB.
 
 ## Requirements
 
@@ -100,7 +102,7 @@ On Windows, the CLI reads arguments as UTF-16 (`wmain`) and converts them to UTF
 ## Notes
 
 - STL has no unit metadata. Use `--scale` to control the output size (e.g. `--scale 0.001` converts mm to m).
-- OCCT licensing applies to the OCCT submodule; see `third_party/occt` for details.
+- OCCT licensing applies to the OCCT submodule and to binaries that include OCCT; see `THIRD_PARTY_NOTICES.md` and `licenses/`.
 
 ## Licensing
 
